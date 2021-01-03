@@ -5,6 +5,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
+/**
+ * @author Upendra
+ *
+ */
 @SpringBootApplication
 public class UserServiceApplication {
 
@@ -12,6 +16,9 @@ public class UserServiceApplication {
 		SpringApplication.run(UserServiceApplication.class, args);
 	}
 
+	/**
+	 * @return RestTemplate
+	 */
 	@Bean
 	public RestTemplate restTemplate() {
 		return new RestTemplate();

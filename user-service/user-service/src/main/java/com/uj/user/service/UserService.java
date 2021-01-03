@@ -11,6 +11,10 @@ import com.uj.user.vo.RestTemplateVo;
 
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * @author Upendra
+ *
+ */
 @Service
 @Slf4j
 public class UserService {
@@ -21,15 +25,27 @@ public class UserService {
 	@Autowired
 	private RestTemplate restTemplate;
 
+	/**
+	 * @param user
+	 * @return user
+	 */
 	public User saveUser(User user) {
 		log.info("Inside user service");
 		return userRepository.save(user);
 	}
 
+	/**
+	 * @param userId
+	 * @return user
+	 */
 	public User findByUserId(Long userId) {
 		return userRepository.findByUserId(userId);
 	}
 
+	/**
+	 * @param userId
+	 * @return RestTemplateVo
+	 */
 	public RestTemplateVo findUserWithDepartment(Long userId) {
 		RestTemplateVo vo = new RestTemplateVo();
 		User user = userRepository.findByUserId(userId);

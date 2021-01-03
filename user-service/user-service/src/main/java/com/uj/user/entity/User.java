@@ -10,6 +10,10 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * @author Upendra
+ *
+ */
 @Entity
 @Table(name = "users")
 @Data

@@ -12,6 +12,10 @@ import com.uj.user.entity.User;
 import com.uj.user.service.UserService;
 import com.uj.user.vo.RestTemplateVo;
 
+/**
+ * @author Upendra
+ *
+ */
 @RestController
 @RequestMapping("/users")
 public class UserController {
@@ -19,16 +23,28 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 
+	/**
+	 * @param user
+	 * @return user
+	 */
 	@PostMapping("/")
 	public User saveUser(@RequestBody User user) {
 		return userService.saveUser(user);
 	}
 
+	/**
+	 * @param userId
+	 * @return user
+	 */
 	@GetMapping("/{userId}")
 	public User findUserById(@PathVariable("userId") Long userId) {
 		return userService.findByUserId(userId);
 	}
 
+	/**
+	 * @param userId
+	 * @return RestTemplateVo
+	 */
 	@GetMapping("/userId/{userId}")
 	public RestTemplateVo getUserWithDepartment(@PathVariable("userId") Long userId) {
 		return userService.findUserWithDepartment(userId);
